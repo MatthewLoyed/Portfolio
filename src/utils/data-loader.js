@@ -2,18 +2,15 @@
  * Data loader utility for fetching and filtering projects
  */
 
+import projectsData from '../data/projects.json';
+
 /**
  * Fetch all projects from the JSON file
  * @returns {Promise<Array>} Array of project objects
  */
 export async function getAllProjects() {
   try {
-    const response = await fetch('/src/data/projects.json');
-    if (!response.ok) {
-      throw new Error('Failed to load projects');
-    }
-    const data = await response.json();
-    return data.projects || [];
+    return projectsData.projects || [];
   } catch (error) {
     console.error('Error loading projects:', error);
     return [];
