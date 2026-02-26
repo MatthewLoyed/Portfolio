@@ -1,0 +1,222 @@
+{
+  "projects": [
+    {
+      "id": "test-prep-pro",
+      "title": "Test Prep Pro",
+      "category": "personal",
+      "tagline": "AI-powered ACT study assistant",
+      "description": "An all-in-one study platform designed to help students master the ACT. Test Prep Pro offers practice tests, progress tracking, and personalized study plans to ensure academic success.",
+      "techStack": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "AI Integration"
+      ],
+      "liveUrl": "https://testpreppro.vercel.app",
+      "githubUrl": "https://github.com/MatthewLoyed/ACT_Prep",
+      "thumbnail": "/assets/projects/test-prep-pro/thumb.png",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/test-prep-pro/thumb.png",
+          "caption": "Test Prep Pro Dashboard"
+        }
+      ],
+      "highlights": [
+        "Personalized study plans",
+        "Interactive practice questions",
+        "Comprehensive progress tracking",
+        "ACT-focused content"
+      ]
+    },
+    {
+      "id": "soulcare-dynamics",
+      "title": "Soulcare Dynamics",
+      "category": "personal",
+      "tagline": "Independent mental health practice website",
+      "description": "A professional, warm website for a local independent mental health practice. Features service information, pricing transparency, and easy booking integration. Built with a focus on accessibility and user trust.",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive Design"
+      ],
+      "liveUrl": "https://www.soulcaredynamics.com",
+      "githubUrl": "https://github.com/MatthewLoyed/soulcare-dynamics",
+      "thumbnail": "/assets/projects/soulcare/thumb.png",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/soulcare/homepage.jpg",
+          "caption": "Homepage with warm, professional design"
+        },
+        {
+          "type": "image",
+          "src": "/assets/projects/soulcare/pricing.jpg",
+          "caption": "Transparent pricing page"
+        }
+      ],
+      "highlights": [
+        "Warm, accessible design for mental health services",
+        "Mobile-first responsive layout",
+        "Integrated booking system",
+        "SEO optimized for local search"
+      ]
+    },
+    {
+      "id": "mcsr-dashboard",
+      "title": "MCSR Dashboard",
+      "category": "personal",
+      "tagline": "Interactive strategy game community hub",
+      "description": "A dynamic website for a collaborative map-based strategy game. Features turn tracking, player statistics, and community engagement tools.",
+      "techStack": [
+        "React",
+        "Node.js",
+        "Discord API",
+        "Google Sheets API"
+      ],
+      "liveUrl": "https://mcsr-dashboard.vercel.app",
+      "githubUrl": "https://github.com/MatthewLoyed/mcsr-dashboard",
+      "thumbnail": "/assets/projects/mapgame/thumb.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/mapgame/dashboard.jpg",
+          "caption": "Game dashboard"
+        }
+      ],
+      "highlights": [
+        "Real-time game state tracking",
+        "Discord integration for community",
+        "Automated turn processing",
+        "Player statistics and analytics"
+      ]
+    },
+    {
+      "id": "chad-ai",
+      "title": "Chad AI Assistant",
+      "category": "personal",
+      "tagline": "AI-powered coding assistant",
+      "description": "An intelligent coding assistant built with modern AI capabilities. Helps with code generation, debugging, and project management tasks.",
+      "techStack": [
+        "Python",
+        "AI/ML",
+        "Natural Language Processing"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "https://github.com/MatthewLoyed/AIAssistant",
+      "thumbnail": "/assets/projects/chad-ai/thumb.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/chad-ai/interface.jpg",
+          "caption": "AI assistant interface"
+        }
+      ],
+      "highlights": [
+        "AI-powered code generation",
+        "Context-aware assistance",
+        "Multi-language support",
+        "Integrated with development workflow"
+      ]
+    },
+    {
+      "id": "mayfly",
+      "title": "Mayfly Habit Tracker",
+      "category": "personal",
+      "tagline": "Minimalist habit tracking mobile app",
+      "description": "A clean, minimalist mobile application designed to help users build and maintain daily habits without the clutter of traditional trackers. Focuses on simplicity and consistency.",
+      "techStack": [
+        "React Native",
+        "Redux",
+        "SQLite",
+        "Mobile Development"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "https://github.com/MatthewLoyed/Mayfly",
+      "thumbnail": "/assets/projects/mayfly/thumb.png",
+      "media": [],
+      "highlights": [
+        "Swipe-to-complete habit interaction",
+        "Daily streak tracking system",
+        "Local database persistence",
+        "Minimalist, distraction-free UI"
+      ]
+    },
+    {
+      "id": "learn-to-learn",
+      "title": "Learn to Learn",
+      "category": "personal",
+      "tagline": "Meta-learning resource hub",
+      "description": "An educational platform focused on meta-learning strategies, helping users understand cognitive science principles to study more effectively and retain information longer.",
+      "techStack": [
+        "React",
+        "Tailwind CSS",
+        "Vite",
+        "Educational Tech"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "thumbnail": "/assets/projects/learn-to-learn/thumb.png",
+      "media": [],
+      "highlights": [
+        "Curated meta-learning guides",
+        "Interactive study technique modules",
+        "Progressive learning pathways",
+        "Clean, focused reading experience"
+      ]
+    },
+    {
+      "id": "canvas-resource-saver",
+      "title": "Canvas Resource Saver",
+      "category": "personal",
+      "tagline": "Chrome extension for Canvas LMS optimization",
+      "description": "A productivity-focused browser extension that allows students to quickly save, organize, and export resources and files directly from their Canvas dashboard.",
+      "techStack": [
+        "JavaScript",
+        "Chrome Extension API",
+        "Manifest V3",
+        "PDF Generation"
+      ],
+      "liveUrl": "https://chromewebstore.google.com/detail/canvas-lms-bulk-downloade/odmemmdfgbjocanojmocjdbanbhimkeh",
+      "githubUrl": "#",
+      "thumbnail": "/assets/projects/canvas-extension/thumb.png",
+      "media": [],
+      "highlights": [
+        "One-click file backup from Canvas",
+        "Course-wide resource scraping",
+        "Organized file export system",
+        "Seamless browser integration"
+      ]
+    },
+    {
+      "id": "school-projects",
+      "title": "School Web Projects",
+      "category": "school",
+      "tagline": "Collection of academic web development projects",
+      "description": "Various web development projects completed during coursework, demonstrating fundamental and advanced web technologies, responsive design, and modern development practices.",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Web APIs"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "thumbnail": "/assets/projects/school/thumb.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/school/collection.jpg",
+          "caption": "School project showcase"
+        }
+      ],
+      "highlights": [
+        "Responsive web design",
+        "Modern CSS techniques",
+        "JavaScript interactivity",
+        "Web accessibility standards"
+      ]
+    }
+  ]
+}

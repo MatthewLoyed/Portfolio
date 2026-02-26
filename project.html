@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project details">
+  <title>Project | Portfolio</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/project.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="project-nav">
+    <div class="container">
+      <button class="back-button" onclick="goBack()">
+        <span class="back-arrow">←</span>
+        Back to Projects
+      </button>
+    </div>
+  </nav>
+
+  <!-- Loading State -->
+  <div id="loadingState" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Loading project...</p>
+  </div>
+
+  <!-- Error State -->
+  <div id="errorState" class="error-container" style="display: none;">
+    <div class="error-icon">⚠️</div>
+    <h1 class="error-title">Project Not Found</h1>
+    <p class="error-message">The project you're looking for doesn't exist or has been removed.</p>
+    <button class="btn btn-primary" onclick="goBack()">
+      Back to Projects
+    </button>
+  </div>
+
+  <!-- Project Content (Hidden until loaded) -->
+  <div id="projectContent" style="display: none;">
+    <!-- Project Header -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-category" id="projectCategory"></span>
+        <h1 class="project-header-title" id="projectTitle"></h1>
+        <p class="project-header-tagline" id="projectTagline"></p>
+        
+        <div class="project-header-meta">
+          <div class="project-tech-list" id="projectTechList"></div>
+          <a href="#" id="projectLiveLink" class="project-live-link" target="_blank" rel="noopener noreferrer" style="display: none;">
+            View Live Site
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Project Main Content -->
+    <main class="project-main">
+      <div class="container">
+        <!-- Description Section -->
+        <section class="project-section">
+          <h2 class="project-section-title">About This Project</h2>
+          <p class="project-description" id="projectDescription"></p>
+        </section>
+
+        <!-- Media Gallery Section -->
+        <section class="project-section" id="mediaSection" style="display: none;">
+          <h2 class="project-section-title">Gallery</h2>
+          <div class="media-gallery" id="mediaGallery"></div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section class="project-section" id="highlightsSection" style="display: none;">
+          <h2 class="project-section-title">Key Features</h2>
+          <ul class="highlights-list" id="highlightsList"></ul>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/js/project.js"></script>
+  <script>
+    function goBack() {
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          window.location.href = '/';
+        });
+      } else {
+        window.location.href = '/';
+      }
+    }
+  </script>
+</body>
+</html>
