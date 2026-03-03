@@ -77,12 +77,12 @@
       ],
       "liveUrl": "https://mcsr-dashboard.vercel.app",
       "githubUrl": "https://github.com/MatthewLoyed/mcsr-dashboard",
-      "thumbnail": "/assets/projects/mapgame/thumb.jpg",
+      "thumbnail": "/assets/projects/mcsr-dashboard/thumb.png",
       "media": [
         {
           "type": "image",
-          "src": "/assets/projects/mapgame/dashboard.jpg",
-          "caption": "Game dashboard"
+          "src": "/assets/projects/mcsr-dashboard/thumb.png",
+          "caption": "MCSR Dashboard screenshot"
         }
       ],
       "highlights": [
@@ -168,7 +168,7 @@
     },
     {
       "id": "canvas-resource-saver",
-      "title": "Canvas Resource Saver",
+      "title": "Canvas Downloader",
       "category": "personal",
       "tagline": "Chrome extension for Canvas LMS optimization",
       "description": "A productivity-focused browser extension that allows students to quickly save, organize, and export resources and files directly from their Canvas dashboard.",
@@ -181,41 +181,18 @@
       "liveUrl": "https://chromewebstore.google.com/detail/canvas-lms-bulk-downloade/odmemmdfgbjocanojmocjdbanbhimkeh",
       "githubUrl": "#",
       "thumbnail": "/assets/projects/canvas-extension/thumb.png",
-      "media": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/canvas-extension/thumb.png",
+          "caption": "Canvas Downloader interface"
+        }
+      ],
       "highlights": [
         "One-click file backup from Canvas",
         "Course-wide resource scraping",
         "Organized file export system",
         "Seamless browser integration"
-      ]
-    },
-    {
-      "id": "school-projects",
-      "title": "School Web Projects",
-      "category": "school",
-      "tagline": "Collection of academic web development projects",
-      "description": "Various web development projects completed during coursework, demonstrating fundamental and advanced web technologies, responsive design, and modern development practices.",
-      "techStack": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Web APIs"
-      ],
-      "liveUrl": "#",
-      "githubUrl": "#",
-      "thumbnail": "/assets/projects/school/thumb.jpg",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/school/collection.jpg",
-          "caption": "School project showcase"
-        }
-      ],
-      "highlights": [
-        "Responsive web design",
-        "Modern CSS techniques",
-        "JavaScript interactivity",
-        "Web accessibility standards"
       ]
     }
   ]

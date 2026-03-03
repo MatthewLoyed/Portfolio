@@ -16,6 +16,13 @@
           &lt;ML /&gt;
         </button>
         
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8 text-white" id="navLinks">
           <button onclick="scrollToSection('home')" class="transition-colors hover:text-blue-500">Home</button>
@@ -25,6 +32,16 @@
           <button onclick="scrollToSection('experience')" class="transition-colors hover:text-blue-500">Experience</button>
           <button onclick="scrollToSection('contact')" class="transition-colors hover:text-blue-500">Contact</button>
         </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobileMenu" class="hidden md:hidden flex-col gap-4 py-6 text-white border-t border-white/10">
+        <button onclick="scrollToSection('home'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">Home</button>
+        <button onclick="scrollToSection('about'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">About</button>
+        <button onclick="scrollToSection('skills'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">Skills</button>
+        <button onclick="scrollToSection('projects'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">Projects</button>
+        <button onclick="scrollToSection('experience'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">Experience</button>
+        <button onclick="scrollToSection('contact'); toggleMobileMenu()" class="text-left py-2 transition-colors hover:text-blue-500">Contact</button>
       </div>
     </div>
   </nav>
@@ -214,40 +231,89 @@
   <section id="experience" class="py-20 bg-slate-50">
     <div class="container mx-auto px-6">
       <h2 class="text-4xl md:text-5xl mb-12 text-center font-bold">Work Experience</h2>
-      <div class="max-w-4xl mx-auto space-y-6">
+      <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Incoming Role -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+            <div>
+              <h3 class="text-2xl font-bold mb-1 text-slate-900">Incoming Software Engineer</h3>
+              <div class="flex items-center gap-2 text-blue-600 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span class="text-lg font-medium">U.S. Army Aviation and Missile Test Directorate</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <span class="text-sm font-semibold">Summer 2026</span>
+            </div>
+          </div>
+          <p class="text-slate-700 leading-relaxed">
+            Accepted a full-time position supporting aviation and missile test systems, with a core focus on <strong>algorithmic development</strong>, <strong>software optimization</strong>, and <strong>performance-critical systems</strong>.
+          </p>
+        </div>
+
+        <!-- Radiance Technologies -->
         <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
           <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
             <div>
-              <h3 class="text-2xl font-bold mb-1">Freelance Software Developer</h3>
+              <h3 class="text-2xl font-bold mb-1 text-slate-900">Software Engineering Intern</h3>
               <div class="flex items-center gap-2 text-blue-600 mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                <span class="text-lg font-medium">Self-Employed</span>
+                <span class="text-lg font-medium">Radiance Technologies Inc.</span>
               </div>
             </div>
             <div class="flex items-center gap-2 text-slate-600">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              <span class="text-sm font-medium">2023 - Present</span>
+              <span class="text-sm font-medium">May 2024 – Aug 2025</span>
             </div>
           </div>
-          <ul class="space-y-2">
+          <ul class="space-y-3 mb-6">
             <li class="text-slate-700 flex gap-2">
               <span class="text-blue-500 mt-1.5">•</span>
-              <span>Developed professional websites for local businesses</span>
+              <span>Architected and debugged performance-critical software systems, enhancing system integration and mathematical correctness.</span>
             </li>
             <li class="text-slate-700 flex gap-2">
               <span class="text-blue-500 mt-1.5">•</span>
-              <span>Built AI-powered coding assistants and tools</span>
+              <span>Developed object tracking systems using frame-level video analysis with a focus on runtime optimization.</span>
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded">C++</span>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded">Algorithm Design</span>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded">Performance Optimization</span>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded">Systems Integration</span>
+          </div>
+        </div>
+
+        <!-- Craft Designs -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+            <div>
+              <h3 class="text-2xl font-bold mb-1 text-slate-900">Software Engineering Intern</h3>
+              <div class="flex items-center gap-2 text-blue-600 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span class="text-lg font-medium">Craft Designs Inc.</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <span class="text-sm font-medium">Aug 2022 – May 2023</span>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            <li class="text-slate-700 flex gap-2">
+              <span class="text-blue-500 mt-1.5">•</span>
+              <span>Supported structured test procedures and designed flight paths for live software demonstrations.</span>
             </li>
             <li class="text-slate-700 flex gap-2">
               <span class="text-blue-500 mt-1.5">•</span>
-              <span>Created interactive web applications and games</span>
-            </li>
-            <li class="text-slate-700 flex gap-2">
-              <span class="text-blue-500 mt-1.5">•</span>
-              <span>Collaborated with clients to deliver custom solutions</span>
+              <span>Collaborated on validation workflows to improve system reliability prior to deployment.</span>
             </li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
@@ -296,8 +362,11 @@
           </div>
         </div>
         
-        <form class="md:col-span-2 bg-white rounded-lg p-8 shadow-md border border-slate-200" id="contactForm">
-          <div class="mb-4">
+        <div class="md:col-span-2 bg-white rounded-lg shadow-md border border-slate-200 relative overflow-hidden" id="contactContainer">
+          <form id="contactForm" class="p-8 transition-all duration-500 ease-in-out transform scale-100 opacity-100">
+            <input type="hidden" name="access_key" value="96b7d7bb-2ab4-4f89-bad7-c6924c42aaf9">
+            
+            <div class="mb-4">
             <label for="name" class="block text-sm font-semibold mb-2">Name</label>
             <input 
               type="text" 
@@ -332,11 +401,31 @@
           
           <button 
             type="submit"
-            class="w-full h-10 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-all inline-flex items-center justify-center"
+            id="submitBtn"
+            class="w-full h-10 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-all inline-flex items-center justify-center disabled:opacity-75 disabled:cursor-not-allowed"
           >
             Send Message
           </button>
-        </form>
+          
+            <p id="formStatus" class="text-sm mt-4 text-center hidden font-medium transition-opacity duration-300"></p>
+          </form>
+
+          <!-- Success Message Overlay -->
+          <div id="successMessage" class="absolute inset-0 p-8 flex flex-col items-center justify-center text-center bg-white transition-all duration-500 ease-in-out transform scale-95 opacity-0 pointer-events-none">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 shadow-md border border-green-200">
+              <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight">Message Sent!</h3>
+            <p class="text-slate-600 mb-8 max-w-sm text-lg leading-relaxed">
+              Thank you for reaching out. I've received your message and will get back to you as soon as possible.
+            </p>
+            <button id="resetFormBtn" type="button" class="h-11 px-8 border-2 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 rounded-md font-medium transition-all inline-flex items-center justify-center">
+              Send Another Message
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>

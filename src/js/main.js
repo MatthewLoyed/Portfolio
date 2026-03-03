@@ -10,39 +10,104 @@ window.scrollToSection = function (id) {
 };
 
 // Navigation scroll effect
+// Mobile Menu State
+let isMobileMenuOpen = false;
+
+window.toggleMobileMenu = function () {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const nav = document.getElementById('nav');
+
+  isMobileMenuOpen = !isMobileMenuOpen;
+
+  if (isMobileMenuOpen) {
+    mobileMenu.classList.remove('hidden');
+    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
+    if (window.scrollY <= 50) {
+      nav.classList.add('bg-slate-900/95', 'backdrop-blur-md');
+    }
+  } else {
+    mobileMenu.classList.add('hidden');
+    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger icon
+    if (window.scrollY <= 50) {
+      nav.classList.remove('bg-slate-900/95', 'backdrop-blur-md');
+    }
+  }
+};
+
 function initNavScroll() {
   const nav = document.getElementById('nav');
   const logo = document.getElementById('logo');
   const navLinks = document.getElementById('navLinks');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  let lastScrollY = window.scrollY;
 
   if (!nav) return;
 
+  // Toggle button listener
+  mobileMenuBtn?.addEventListener('click', window.toggleMobileMenu);
+
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    const currentScrollY = window.scrollY;
+
+    // Header Visibility logic (Hide on Scroll Down, Show on Scroll Up)
+    if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobileMenuOpen) {
+      // Scrolling Down - Hide Header
+      nav.classList.add('-translate-y-full');
+    } else {
+      // Scrolling Up or at Top - Show Header
+      nav.classList.remove('-translate-y-full');
+    }
+
+    // "Scroll Up closes header" logic: Close mobile menu if it's open and user scrolls up
+    if (currentScrollY < lastScrollY && isMobileMenuOpen) {
+      window.toggleMobileMenu();
+    }
+
+    // Sticky background logic
+    if (currentScrollY > 50) {
       nav.classList.add('bg-white', 'shadow-md');
-      nav.classList.remove('bg-transparent');
+      nav.classList.remove('bg-transparent', 'bg-slate-900/95');
       logo.classList.add('text-slate-900');
       logo.classList.remove('text-white');
+      mobileMenuBtn?.classList.add('text-slate-900');
+      mobileMenuBtn?.classList.remove('text-white');
       navLinks?.querySelectorAll('button').forEach(btn => {
         btn.classList.add('text-slate-700');
         btn.classList.remove('text-white');
       });
-      navLinks?.classList.remove('text-white');
+      const mMenu = document.getElementById('mobileMenu');
+      if (mMenu) {
+        mMenu.classList.remove('text-white');
+        mMenu.classList.add('text-slate-900');
+      }
     } else {
-      nav.classList.remove('bg-white', 'shadow-md');
-      nav.classList.add('bg-transparent');
+      if (!isMobileMenuOpen) {
+        nav.classList.remove('bg-white', 'shadow-md');
+        nav.classList.add('bg-transparent');
+      } else {
+        nav.classList.add('bg-slate-900/95', 'backdrop-blur-md');
+      }
       logo.classList.remove('text-slate-900');
       logo.classList.add('text-white');
+      mobileMenuBtn?.classList.remove('text-slate-900');
+      mobileMenuBtn?.classList.add('text-white');
       navLinks?.querySelectorAll('button').forEach(btn => {
         btn.classList.remove('text-slate-700');
         btn.classList.add('text-white');
       });
-      navLinks?.classList.add('text-white');
+      const mMenu = document.getElementById('mobileMenu');
+      if (mMenu) {
+        mMenu.classList.add('text-white');
+        mMenu.classList.remove('text-slate-900');
+      }
     }
+
+    lastScrollY = currentScrollY;
   };
 
   window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Set initial state
+  handleScroll();
 }
 
 // Add social icons
@@ -84,7 +149,7 @@ function initSocialIcons() {
 // Create project card
 function createProjectCard(project) {
   const card = document.createElement('div');
-  card.className = 'bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group';
+  card.className = 'bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full';
 
   const fallbackImage = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop&q=80';
   const imageHtml = project.thumbnail && project.thumbnail !== '#'
@@ -92,10 +157,10 @@ function createProjectCard(project) {
     : `<img src="${fallbackImage}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">`;
 
   card.innerHTML = `
-    <div class="relative overflow-hidden h-48">
+    <div class="relative overflow-hidden h-48 flex-shrink-0">
       ${imageHtml}
     </div>
-    <div class="p-6">
+    <div class="p-6 flex flex-col flex-grow">
       <h3 class="text-2xl font-bold mb-2">${project.title}</h3>
       <p class="text-slate-600 mb-4 line-clamp-3">${project.description}</p>
       <div class="flex flex-wrap gap-2 mb-4">
@@ -103,7 +168,7 @@ function createProjectCard(project) {
           <span class="text-xs py-1 px-2 border border-slate-300 rounded-md text-slate-700">${tech}</span>
         `).join('')}
       </div>
-      <div class="flex gap-2">
+      <div class="flex gap-2 mt-auto">
         ${project.githubUrl && project.githubUrl !== '#' ? `
           <button 
             onclick="window.open('${project.githubUrl}', '_blank')"
@@ -155,19 +220,80 @@ async function renderProjects() {
 // Handle contact form
 function handleContactForm() {
   const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+  const successMessageDiv = document.getElementById('successMessage');
+  const resetFormBtn = document.getElementById('resetFormBtn');
 
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  // Show success overlay with animation
+  const showSuccessState = () => {
+    // Hide form
+    form.classList.remove('scale-100', 'opacity-100');
+    form.classList.add('scale-95', 'opacity-0', 'pointer-events-none');
+
+    // Show success message
+    successMessageDiv.classList.remove('scale-95', 'opacity-0', 'pointer-events-none');
+    successMessageDiv.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+  };
+
+  // Reset form and UI state
+  const resetFormState = () => {
+    form.reset();
+    formStatus.classList.add('hidden');
+
+    // Hide success message
+    successMessageDiv.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+    successMessageDiv.classList.add('scale-95', 'opacity-0', 'pointer-events-none');
+
+    // Show form
+    form.classList.remove('scale-95', 'opacity-0', 'pointer-events-none');
+    form.classList.add('scale-100', 'opacity-100');
+  };
+
+  if (resetFormBtn) {
+    resetFormBtn.addEventListener('click', resetFormState);
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // UI Loading State
+    const originalBtnText = submitBtn.innerText;
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+    formStatus.classList.add('hidden');
+    formStatus.classList.remove('text-red-600');
+
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
 
-    console.log('Form submitted:', data);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
 
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    form.reset();
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccessState();
+      } else {
+        console.error('Error submitting form:', data);
+        formStatus.innerText = "Something went wrong. Please try again later.";
+        formStatus.classList.add('text-red-600');
+        formStatus.classList.remove('hidden');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      formStatus.innerText = "Something went wrong. Please try again later.";
+      formStatus.classList.add('text-red-600');
+      formStatus.classList.remove('hidden');
+    } finally {
+      // Revert UI Loading State
+      submitBtn.innerText = originalBtnText;
+      submitBtn.disabled = false;
+    }
   });
 }
 
