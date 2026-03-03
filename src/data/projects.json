@@ -105,12 +105,12 @@
       ],
       "liveUrl": "#",
       "githubUrl": "https://github.com/MatthewLoyed/AIAssistant",
-      "thumbnail": "/assets/projects/chad-ai/thumb.jpg",
+      "thumbnail": "/assets/projects/chad-ai/thumb.png",
       "media": [
         {
           "type": "image",
-          "src": "/assets/projects/chad-ai/interface.jpg",
-          "caption": "AI assistant interface"
+          "src": "/assets/projects/chad-ai/thumb.png",
+          "caption": "Chad AI Assistant interface"
         }
       ],
       "highlights": [
@@ -135,7 +135,13 @@
       "liveUrl": "#",
       "githubUrl": "https://github.com/MatthewLoyed/Mayfly",
       "thumbnail": "/assets/projects/mayfly/thumb.png",
-      "media": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/mayfly/thumb.png",
+          "caption": "Mayfly Habit Tracker interface"
+        }
+      ],
       "highlights": [
         "Swipe-to-complete habit interaction",
         "Daily streak tracking system",

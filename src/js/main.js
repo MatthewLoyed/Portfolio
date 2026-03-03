@@ -152,12 +152,21 @@ function createProjectCard(project) {
   card.className = 'bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full';
 
   const fallbackImage = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop&q=80';
+
+  // Detect if project is a mobile app to adjust thumbnail rendering
+  const isMobile = project.techStack.some(tech =>
+    tech.toLowerCase().includes('mobile') ||
+    tech.toLowerCase().includes('native') ||
+    tech.toLowerCase().includes('ios') ||
+    tech.toLowerCase().includes('android')
+  );
+
   const imageHtml = project.thumbnail && project.thumbnail !== '#'
-    ? `<img src="${project.thumbnail}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='${fallbackImage}'">`
-    : `<img src="${fallbackImage}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">`;
+    ? `<img src="${project.thumbnail}" alt="${project.title}" class="w-full h-full ${isMobile ? 'object-contain p-4' : 'object-cover'} group-hover:scale-105 transition-transform duration-300" onerror="this.src='${fallbackImage}'">`
+    : `<img src="${fallbackImage}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`;
 
   card.innerHTML = `
-    <div class="relative overflow-hidden h-48 flex-shrink-0">
+    <div class="relative overflow-hidden h-48 flex-shrink-0 ${isMobile ? 'bg-slate-50' : ''}">
       ${imageHtml}
     </div>
     <div class="p-6 flex flex-col flex-grow">
