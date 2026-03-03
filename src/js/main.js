@@ -17,7 +17,7 @@ function initNavScroll() {
 
   if (!nav) return;
 
-  window.addEventListener('scroll', () => {
+  const handleScroll = () => {
     if (window.scrollY > 50) {
       nav.classList.add('bg-white', 'shadow-md');
       nav.classList.remove('bg-transparent');
@@ -27,6 +27,7 @@ function initNavScroll() {
         btn.classList.add('text-slate-700');
         btn.classList.remove('text-white');
       });
+      navLinks?.classList.remove('text-white');
     } else {
       nav.classList.remove('bg-white', 'shadow-md');
       nav.classList.add('bg-transparent');
@@ -36,8 +37,12 @@ function initNavScroll() {
         btn.classList.remove('text-slate-700');
         btn.classList.add('text-white');
       });
+      navLinks?.classList.add('text-white');
     }
-  });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Set initial state
 }
 
 // Add social icons
