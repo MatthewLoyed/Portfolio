@@ -149,7 +149,7 @@ function initSocialIcons() {
 // Create project card
 function createProjectCard(project) {
   const card = document.createElement('div');
-  card.className = 'bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full';
+  card.className = 'bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer';
 
   const fallbackImage = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop&q=80';
 
@@ -197,6 +197,19 @@ function createProjectCard(project) {
       </div>
     </div>
   `;
+
+  card.addEventListener('click', (e) => {
+    // Only navigate if the click was not on an action button
+    if (!e.target.closest('button')) {
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          window.location.href = `/project.html?id=${project.id}`;
+        });
+      } else {
+        window.location.href = `/project.html?id=${project.id}`;
+      }
+    }
+  });
 
   return card;
 }

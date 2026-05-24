@@ -200,6 +200,71 @@
         "Organized file export system",
         "Seamless browser integration"
       ]
+    },
+    {
+      "id": "soulcare-mobile",
+      "title": "SoulCare Mobile",
+      "category": "personal",
+      "tagline": "Corporate chaplaincy care mobile app built with React Native and Expo",
+      "description": "A secure, confidential mobile application built for SoulCare Dynamics. The app provides a dedicated, relational channel for employees and clients to submit anonymous or signed prayer requests, contact corporate chaplains directly, book consultations via Calendly, and access curated encouragement resources. Integrates with Supabase for backend database and auth, Expo push notifications, and Resend for transactional email notifications.",
+      "techStack": [
+        "React Native",
+        "Expo",
+        "NativeWind",
+        "Supabase",
+        "TypeScript"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "https://github.com/MatthewLoyed/soulcare-mobile",
+      "thumbnail": "/assets/projects/soulcare-mobile/thumb.png",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/soulcare-mobile/logo.png",
+          "caption": "Confidential, warm corporate support app logo"
+        },
+        {
+          "type": "image",
+          "src": "/assets/projects/soulcare-mobile/hero.png",
+          "caption": "SoulCare Home view highlighting spiritual and mental health resources"
+        }
+      ],
+      "highlights": [
+        "Confidential prayer request and contact intakes using Supabase Row Level Security",
+        "Integrated WebView scheduling via Calendly integration",
+        "Expo Push Notifications and Resend email alerts triggered by Supabase Edge Functions",
+        "Vibrant and accessible NativeWind (Tailwind CSS) UI for optimized mobile user experience"
+      ]
+    },
+    {
+      "id": "golfport",
+      "title": "GolfPort",
+      "category": "personal",
+      "tagline": "Pre-launch tiered golf subscription platform",
+      "description": "A luxury-themed pre-launch marketing website and lead capture platform for Golfport—a tiered subscription service (think ClassPass for golf) providing access to a network of public, semi-private, and private golf courses. Features a clean, magazine-style layout, smooth scroll animations, and forms connected to Google Sheets API and Resend for waitlist and course partner lead capture.",
+      "techStack": [
+        "HTML",
+        "Tailwind CSS",
+        "JavaScript",
+        "Google Sheets API",
+        "Resend"
+      ],
+      "liveUrl": "https://golfport.vercel.app",
+      "githubUrl": "https://github.com/MatthewLoyed/GolfPort",
+      "thumbnail": "/assets/projects/golfport/thumb.png",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/golfport/hero.png",
+          "caption": "Luxury branding with green and gold accents at golden hour"
+        }
+      ],
+      "highlights": [
+        "Aesthetic luxury direction combining dark backgrounds, green and gold accents, and elegant typography",
+        "Google Sheets API and Resend integration for waitlist signups and B2B course partner inquiries",
+        "Clear pricing breakdown for Player, Premier, and Prestige subscription tiers",
+        "Fully responsive, mobile-first design optimized for conversion in under 10 seconds"
+      ]
     }
   ]
 }
