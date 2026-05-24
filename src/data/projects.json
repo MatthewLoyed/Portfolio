@@ -47,13 +47,18 @@
       "media": [
         {
           "type": "image",
-          "src": "/assets/projects/soulcare/homepage.jpg",
-          "caption": "Homepage with warm, professional design"
+          "src": "/assets/projects/soulcare/hero.png",
+          "caption": "SoulCare Dynamics homepage hero with warm, professional design"
         },
         {
           "type": "image",
-          "src": "/assets/projects/soulcare/pricing.jpg",
-          "caption": "Transparent pricing page"
+          "src": "/assets/projects/soulcare/logo.png",
+          "caption": "SoulCare Dynamics transparent logo"
+        },
+        {
+          "type": "image",
+          "src": "/assets/projects/soulcare/about_david.png",
+          "caption": "Founder and Corporate Chaplain David Loyed"
         }
       ],
       "highlights": [
