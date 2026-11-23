@@ -3,92 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Matthew Loyed</title>
   <meta name="description" content="Project details">
-  <title>Project | Portfolio</title>
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232f5d50'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='600' text-anchor='middle' fill='%23faf8f4'%3EML%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/src/styles/main.css">
-  <link rel="stylesheet" href="/src/styles/project.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="project-nav">
-    <div class="container">
-      <button class="back-button" onclick="goBack()">
-        <span class="back-arrow">←</span>
-        Back to Projects
-      </button>
-    </div>
-  </nav>
+  <header class="border-b border-line">
+    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between" aria-label="Main">
+      <a href="/" class="font-serif text-lg font-semibold whitespace-nowrap">Matthew Loyed</a>
+      <a href="/#work" class="text-sm text-muted hover:text-ink transition-colors">← All work</a>
+    </nav>
+  </header>
 
-  <!-- Loading State -->
-  <div id="loadingState" class="loading-container">
-    <div class="loading-spinner"></div>
-    <p class="loading-text">Loading project...</p>
-  </div>
-
-  <!-- Error State -->
-  <div id="errorState" class="error-container" style="display: none;">
-    <div class="error-icon">⚠️</div>
-    <h1 class="error-title">Project Not Found</h1>
-    <p class="error-message">The project you're looking for doesn't exist or has been removed.</p>
-    <button class="btn btn-primary" onclick="goBack()">
-      Back to Projects
-    </button>
-  </div>
-
-  <!-- Project Content (Hidden until loaded) -->
-  <div id="projectContent" style="display: none;">
-    <!-- Project Header -->
-    <header class="project-header">
-      <div class="container">
-        <span class="project-category" id="projectCategory"></span>
-        <h1 class="project-header-title" id="projectTitle"></h1>
-        <p class="project-header-tagline" id="projectTagline"></p>
-        
-        <div class="project-header-meta">
-          <div class="project-tech-list" id="projectTechList"></div>
-          <a href="#" id="projectLiveLink" class="project-live-link" target="_blank" rel="noopener noreferrer" style="display: none;">
-            View Live Site
-            <span>↗</span>
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Project Main Content -->
-    <main class="project-main">
-      <div class="container">
-        <!-- Description Section -->
-        <section class="project-section">
-          <h2 class="project-section-title">About This Project</h2>
-          <p class="project-description" id="projectDescription"></p>
-        </section>
-
-        <!-- Media Gallery Section -->
-        <section class="project-section" id="mediaSection" style="display: none;">
-          <h2 class="project-section-title">Gallery</h2>
-          <div class="media-gallery" id="mediaGallery"></div>
-        </section>
-
-        <!-- Highlights Section -->
-        <section class="project-section" id="highlightsSection" style="display: none;">
-          <h2 class="project-section-title">Key Features</h2>
-          <ul class="highlights-list" id="highlightsList"></ul>
-        </section>
-      </div>
-    </main>
-  </div>
+  <main class="max-w-3xl mx-auto px-6 py-14" id="content">
+    <p class="text-muted">Loading…</p>
+  </main>
 
   <script type="module" src="/src/js/project.js"></script>
-  <script>
-    function goBack() {
-      if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          window.location.href = '/';
-        });
-      } else {
-        window.location.href = '/';
-      }
-    }
-  </script>
 </body>
 </html>

@@ -1,153 +1,51 @@
-/**
- * Project Detail Page Script
- * Loads and displays individual project information
- */
-
 import { getProjectById } from '../utils/data-loader.js';
 
-/**
- * Get project ID from URL parameters
- */
-function getProjectIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');
+const esc = (s) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
+const ext = 'target="_blank" rel="noopener noreferrer"';
+const root = document.getElementById('content');
+
+function notFound() {
+  document.title = 'Project not found — Matthew Loyed';
+  root.innerHTML = `
+    <h1 class="text-3xl font-medium mb-3">Project not found</h1>
+    <p class="text-muted mb-6">That project doesn't exist.</p>
+    <a class="link" href="/#work">Back to all work</a>`;
 }
 
-/**
- * Show loading state
- */
-function showLoading() {
-    document.getElementById('loadingState').style.display = 'flex';
-    document.getElementById('errorState').style.display = 'none';
-    document.getElementById('projectContent').style.display = 'none';
+function render(p) {
+  document.title = `${p.title} — Matthew Loyed`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', p.tagline);
+
+  const actions = [
+    p.liveUrl && `<a class="link" href="${esc(p.liveUrl)}" ${ext}>${esc(p.liveLabel || 'Live site')} ↗</a>`,
+    p.githubUrl && `<a class="link" href="${esc(p.githubUrl)}" ${ext}>Source code ↗</a>`,
+  ].filter(Boolean).join('');
+
+  root.innerHTML = `
+    <p class="text-sm text-muted mb-2">${esc(p.year)}</p>
+    <h1 class="text-4xl md:text-5xl font-medium mb-3">${esc(p.title)}</h1>
+    <p class="text-xl text-muted mb-6">${esc(p.tagline)}</p>
+    <p class="flex flex-wrap gap-1.5 mb-6">${p.techStack.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</p>
+    ${actions ? `<p class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-10">${actions}</p>` : ''}
+
+    ${(p.media || []).map((m) => `
+      <figure class="mb-10">
+        <img src="${esc(m.src)}" alt="${esc(m.caption || p.title)}" class="w-full max-h-[32rem] object-contain bg-white border border-line rounded">
+        ${m.caption ? `<figcaption class="text-sm text-muted mt-2">${esc(m.caption)}</figcaption>` : ''}
+      </figure>`).join('')}
+
+    <p class="text-lg mb-8 max-w-2xl">${esc(p.description)}</p>
+
+    ${p.highlights?.length ? `
+      <h2 class="section-label !mb-3">Notes</h2>
+      <ul class="list-disc pl-5 space-y-2 marker:text-line max-w-2xl">
+        ${p.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}
+      </ul>` : ''}
+  `;
 }
 
-/**
- * Show error state
- */
-function showError() {
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('errorState').style.display = 'flex';
-    document.getElementById('projectContent').style.display = 'none';
-}
-
-/**
- * Show project content
- */
-function showContent() {
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('errorState').style.display = 'none';
-    document.getElementById('projectContent').style.display = 'block';
-}
-
-/**
- * Render project details
- */
-function renderProject(project) {
-    // Update page title
-    document.title = `${project.title} | Portfolio`;
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-        metaDescription.setAttribute('content', project.description);
-    }
-
-    // Category
-    const categoryElement = document.getElementById('projectCategory');
-    categoryElement.textContent = project.category;
-
-    // Title and tagline
-    document.getElementById('projectTitle').textContent = project.title;
-    document.getElementById('projectTagline').textContent = project.tagline;
-
-    // Tech stack
-    const techListElement = document.getElementById('projectTechList');
-    techListElement.innerHTML = project.techStack.map(tech => `
-    <span class="tech-badge">${tech}</span>
-  `).join('');
-
-    // Live link
-    const liveLinkElement = document.getElementById('projectLiveLink');
-    if (project.liveUrl && project.liveUrl !== '#') {
-        liveLinkElement.href = project.liveUrl;
-        liveLinkElement.style.display = 'inline-flex';
-    }
-
-    // Description
-    document.getElementById('projectDescription').textContent = project.description;
-
-    // Media gallery
-    if (project.media && project.media.length > 0) {
-        const mediaSection = document.getElementById('mediaSection');
-        const mediaGallery = document.getElementById('mediaGallery');
-
-        mediaGallery.innerHTML = project.media.map(item => {
-            const fallbackImage = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop&q=80';
-            const mediaElement = item.type === 'video'
-                ? `<video src="${item.src}" controls></video>`
-                : `<img src="${item.src}" alt="${item.caption || project.title}" loading="lazy" onerror="this.src='${fallbackImage}'">`;
-
-            return `
-        <div class="media-item">
-          ${mediaElement}
-          ${item.caption ? `<div class="media-caption">${item.caption}</div>` : ''}
-        </div>
-      `;
-        }).join('');
-
-        mediaSection.style.display = 'block';
-    }
-
-    // Highlights
-    if (project.highlights && project.highlights.length > 0) {
-        const highlightsSection = document.getElementById('highlightsSection');
-        const highlightsList = document.getElementById('highlightsList');
-
-        highlightsList.innerHTML = project.highlights.map(highlight => `
-      <li class="highlight-item">
-        <span class="highlight-icon">✨</span>
-        <span class="highlight-text">${highlight}</span>
-      </li>
-    `).join('');
-
-        highlightsSection.style.display = 'block';
-    }
-
-    showContent();
-}
-
-/**
- * Initialize project page
- */
-async function init() {
-    showLoading();
-
-    const projectId = getProjectIdFromUrl();
-
-    if (!projectId) {
-        showError();
-        return;
-    }
-
-    try {
-        const project = await getProjectById(projectId);
-
-        if (!project) {
-            showError();
-            return;
-        }
-
-        renderProject(project);
-    } catch (error) {
-        console.error('Error loading project:', error);
-        showError();
-    }
-}
-
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
-}
+const id = new URLSearchParams(window.location.search).get('id');
+const project = id ? await getProjectById(id) : null;
+project ? render(project) : notFound();

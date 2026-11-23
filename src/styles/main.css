@@ -1,34 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+@layer components {
+  .link {
+    @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-accent hover:text-accent;
+  }
+  .tag {
+    @apply text-xs text-muted border border-line rounded px-2 py-0.5;
+  }
+  .section-label {
+    @apply text-sm uppercase tracking-widest text-muted mb-8;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }

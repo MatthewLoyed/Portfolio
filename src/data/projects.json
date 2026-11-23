@@ -1,252 +1,65 @@
 {
   "projects": [
     {
-      "id": "test-prep-pro",
-      "title": "Test Prep Pro",
-      "category": "personal",
-      "tagline": "AI-powered ACT study assistant",
-      "description": "An all-in-one study platform designed to help students master the ACT. Test Prep Pro offers practice tests, progress tracking, and personalized study plans to ensure academic success.",
-      "techStack": [
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "AI Integration"
-      ],
-      "liveUrl": "https://testpreppro.vercel.app",
-      "githubUrl": "https://github.com/MatthewLoyed/ACT_Prep",
-      "thumbnail": "/assets/projects/test-prep-pro/thumb.png",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/test-prep-pro/thumb.png",
-          "caption": "Test Prep Pro Dashboard"
-        }
-      ],
-      "highlights": [
-        "Personalized study plans",
-        "Interactive practice questions",
-        "Comprehensive progress tracking",
-        "ACT-focused content"
-      ]
-    },
-    {
-      "id": "soulcare-dynamics",
-      "title": "Soulcare Dynamics",
-      "category": "personal",
-      "tagline": "Independent mental health practice website",
-      "description": "A professional, warm website for a local independent mental health practice. Features service information, pricing transparency, and easy booking integration. Built with a focus on accessibility and user trust.",
-      "techStack": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Responsive Design"
-      ],
-      "liveUrl": "https://www.soulcaredynamics.com",
-      "githubUrl": "https://github.com/MatthewLoyed/soulcare-dynamics",
-      "thumbnail": "/assets/projects/soulcare/thumb.png",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/soulcare/hero.png",
-          "caption": "SoulCare Dynamics homepage hero with warm, professional design"
-        },
-        {
-          "type": "image",
-          "src": "/assets/projects/soulcare/logo.png",
-          "caption": "SoulCare Dynamics transparent logo"
-        },
-        {
-          "type": "image",
-          "src": "/assets/projects/soulcare/about_david.png",
-          "caption": "Founder and Corporate Chaplain David Loyed"
-        }
-      ],
-      "highlights": [
-        "Warm, accessible design for mental health services",
-        "Mobile-first responsive layout",
-        "Integrated booking system",
-        "SEO optimized for local search"
-      ]
-    },
-    {
-      "id": "mcsr-dashboard",
-      "title": "MCSR Dashboard",
-      "category": "personal",
-      "tagline": "Interactive strategy game community hub",
-      "description": "A dynamic website for a collaborative map-based strategy game. Features turn tracking, player statistics, and community engagement tools.",
-      "techStack": [
-        "React",
-        "Node.js",
-        "Discord API",
-        "Google Sheets API"
-      ],
-      "liveUrl": "https://mcsr-dashboard.vercel.app",
-      "githubUrl": "https://github.com/MatthewLoyed/mcsr-dashboard",
-      "thumbnail": "/assets/projects/mcsr-dashboard/thumb.png",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/mcsr-dashboard/thumb.png",
-          "caption": "MCSR Dashboard screenshot"
-        }
-      ],
-      "highlights": [
-        "Real-time game state tracking",
-        "Discord integration for community",
-        "Automated turn processing",
-        "Player statistics and analytics"
-      ]
-    },
-    {
-      "id": "chad-ai",
-      "title": "Chad AI Assistant",
-      "category": "personal",
-      "tagline": "AI-powered coding assistant",
-      "description": "An intelligent coding assistant built with modern AI capabilities. Helps with code generation, debugging, and project management tasks.",
-      "techStack": [
-        "Python",
-        "AI/ML",
-        "Natural Language Processing"
-      ],
-      "liveUrl": "#",
-      "githubUrl": "https://github.com/MatthewLoyed/AIAssistant",
-      "thumbnail": "/assets/projects/chad-ai/thumb.png",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/chad-ai/thumb.png",
-          "caption": "Chad AI Assistant interface"
-        }
-      ],
-      "highlights": [
-        "AI-powered code generation",
-        "Context-aware assistance",
-        "Multi-language support",
-        "Integrated with development workflow"
-      ]
-    },
-    {
-      "id": "mayfly",
-      "title": "Mayfly Habit Tracker",
-      "category": "personal",
-      "tagline": "Minimalist habit tracking mobile app",
-      "description": "A clean, minimalist mobile application designed to help users build and maintain daily habits without the clutter of traditional trackers. Focuses on simplicity and consistency.",
-      "techStack": [
-        "React Native",
-        "Redux",
-        "SQLite",
-        "Mobile Development"
-      ],
-      "liveUrl": "#",
-      "githubUrl": "https://github.com/MatthewLoyed/Mayfly",
-      "thumbnail": "/assets/projects/mayfly/thumb.png",
-      "media": [
-        {
-          "type": "image",
-          "src": "/assets/projects/mayfly/thumb.png",
-          "caption": "Mayfly Habit Tracker interface"
-        }
-      ],
-      "highlights": [
-        "Swipe-to-complete habit interaction",
-        "Daily streak tracking system",
-        "Local database persistence",
-        "Minimalist, distraction-free UI"
-      ]
-    },
-    {
-      "id": "learn-to-learn",
-      "title": "Learn to Learn",
-      "category": "personal",
-      "tagline": "Meta-learning resource hub",
-      "description": "An educational platform focused on meta-learning strategies, helping users understand cognitive science principles to study more effectively and retain information longer.",
-      "techStack": [
-        "React",
-        "Tailwind CSS",
-        "Vite",
-        "Educational Tech"
-      ],
-      "liveUrl": "#",
-      "githubUrl": "#",
-      "thumbnail": "/assets/projects/learn-to-learn/thumb.png",
-      "media": [],
-      "highlights": [
-        "Curated meta-learning guides",
-        "Interactive study technique modules",
-        "Progressive learning pathways",
-        "Clean, focused reading experience"
-      ]
-    },
-    {
-      "id": "canvas-resource-saver",
+      "id": "canvas-downloader",
       "title": "Canvas Downloader",
-      "category": "personal",
-      "tagline": "Chrome extension for Canvas LMS optimization",
-      "description": "A productivity-focused browser extension that allows students to quickly save, organize, and export resources and files directly from their Canvas dashboard.",
+      "featured": true,
+      "year": "2026",
+      "tagline": "Chrome extension for bulk-downloading Canvas course files",
+      "description": "A Chrome extension on the Web Store that scans a Canvas course for files, unwraps the HTML redirect pages Canvas uses for some links, and downloads everything through a concurrent queue so students can back up a course in one pass.",
       "techStack": [
         "JavaScript",
-        "Chrome Extension API",
-        "Manifest V3",
-        "PDF Generation"
+        "Chrome Extension (MV3)"
       ],
       "liveUrl": "https://chromewebstore.google.com/detail/canvas-lms-bulk-downloade/odmemmdfgbjocanojmocjdbanbhimkeh",
-      "githubUrl": "#",
-      "thumbnail": "/assets/projects/canvas-extension/thumb.png",
+      "liveLabel": "Chrome Web Store",
+      "githubUrl": "https://github.com/MatthewLoyed/CanvasExtension",
+      "thumbnail": "/assets/projects/canvas-extension/thumb.webp",
       "media": [
         {
-          "type": "image",
-          "src": "/assets/projects/canvas-extension/thumb.png",
-          "caption": "Canvas Downloader interface"
+          "src": "/assets/projects/canvas-extension/thumb.webp",
+          "caption": "Canvas Downloader store listing"
         }
       ],
       "highlights": [
-        "One-click file backup from Canvas",
-        "Course-wide resource scraping",
-        "Organized file export system",
-        "Seamless browser integration"
+        "Published and in use on the Chrome Web Store",
+        "Course-wide file discovery, including files hidden behind HTML redirect pages",
+        "Concurrent download queue for bulk exports"
       ]
     },
     {
-      "id": "soulcare-mobile",
-      "title": "SoulCare Mobile",
-      "category": "personal",
-      "tagline": "Corporate chaplaincy care mobile app built with React Native and Expo",
-      "description": "A secure, confidential mobile application built for SoulCare Dynamics. The app provides a dedicated, relational channel for employees and clients to submit anonymous or signed prayer requests, contact corporate chaplains directly, book consultations via Calendly, and access curated encouragement resources. Integrates with Supabase for backend database and auth, Expo push notifications, and Resend for transactional email notifications.",
+      "id": "chad",
+      "title": "Chad",
+      "featured": true,
+      "year": "2026",
+      "tagline": "Windows desktop assistant for local AI models",
+      "description": "An experimental desktop assistant that runs against local models for chat, summaries and rewrites. Chat history and memory stay in local storage by default. It is in alpha, and I'm upfront about that in the README.",
       "techStack": [
-        "React Native",
-        "Expo",
-        "NativeWind",
-        "Supabase",
-        "TypeScript"
+        "Python",
+        "Local LLMs",
+        "Windows"
       ],
-      "liveUrl": "#",
-      "githubUrl": "https://github.com/MatthewLoyed/soulcare-mobile",
-      "thumbnail": "/assets/projects/soulcare-mobile/thumb.png",
+      "liveUrl": null,
+      "githubUrl": "https://github.com/MatthewLoyed/Chad",
+      "thumbnail": "/assets/projects/chad-ai/thumb.webp",
       "media": [
         {
-          "type": "image",
-          "src": "/assets/projects/soulcare-mobile/logo.png",
-          "caption": "Confidential, warm corporate support app logo"
-        },
-        {
-          "type": "image",
-          "src": "/assets/projects/soulcare-mobile/hero.png",
-          "caption": "SoulCare Home view highlighting spiritual and mental health resources"
+          "src": "/assets/projects/chad-ai/thumb.webp",
+          "caption": "Chad home screen (earlier build)"
         }
       ],
       "highlights": [
-        "Confidential prayer request and contact intakes using Supabase Row Level Security",
-        "Integrated WebView scheduling via Calendly integration",
-        "Expo Push Notifications and Resend email alerts triggered by Supabase Edge Functions",
-        "Vibrant and accessible NativeWind (Tailwind CSS) UI for optimized mobile user experience"
+        "Chat, summaries and rewrites against local models",
+        "Local-first storage for history and memory",
+        "Documented as an experimental alpha with clear scope and safety notes"
       ]
     },
     {
       "id": "golfport",
       "title": "GolfPort",
-      "category": "personal",
-      "tagline": "Pre-launch tiered golf subscription platform",
-      "description": "A luxury-themed pre-launch marketing website and lead capture platform for Golfport—a tiered subscription service (think ClassPass for golf) providing access to a network of public, semi-private, and private golf courses. Features a clean, magazine-style layout, smooth scroll animations, and forms connected to Google Sheets API and Resend for waitlist and course partner lead capture.",
+      "year": "2026",
+      "tagline": "Pre-launch site for a tiered golf membership",
+      "description": "A marketing site and lead-capture flow for a ClassPass-style golf membership. Waitlist and course-partner forms write to Google Sheets and send email through Resend.",
       "techStack": [
         "HTML",
         "Tailwind CSS",
@@ -255,20 +68,151 @@
         "Resend"
       ],
       "liveUrl": "https://golfport.vercel.app",
-      "githubUrl": "https://github.com/MatthewLoyed/GolfPort",
-      "thumbnail": "/assets/projects/golfport/thumb.png",
+      "githubUrl": null,
+      "thumbnail": "/assets/projects/golfport/thumb.webp",
       "media": [
         {
-          "type": "image",
-          "src": "/assets/projects/golfport/hero.png",
-          "caption": "Luxury branding with green and gold accents at golden hour"
+          "src": "/assets/projects/golfport/hero.webp",
+          "caption": "GolfPort landing page"
         }
       ],
       "highlights": [
-        "Aesthetic luxury direction combining dark backgrounds, green and gold accents, and elegant typography",
-        "Google Sheets API and Resend integration for waitlist signups and B2B course partner inquiries",
-        "Clear pricing breakdown for Player, Premier, and Prestige subscription tiers",
-        "Fully responsive, mobile-first design optimized for conversion in under 10 seconds"
+        "Waitlist and course-partner forms wired to Google Sheets and Resend",
+        "Three-tier membership pricing layout",
+        "Mobile-first, built for quick sign-up"
+      ]
+    },
+    {
+      "id": "soulcare-dynamics",
+      "title": "SoulCare Dynamics",
+      "year": "2026",
+      "tagline": "Website for an independent chaplaincy and counseling practice",
+      "description": "The public site for a real practice: services, transparent pricing, an about page and booking. Plain HTML, CSS and JavaScript, built to load fast and read clearly on a phone.",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "liveUrl": "https://www.soulcaredynamics.com",
+      "githubUrl": "https://github.com/MatthewLoyed/soulcare-dynamics",
+      "thumbnail": "/assets/projects/soulcare/thumb.webp",
+      "media": [
+        {
+          "src": "/assets/projects/soulcare/hero.webp",
+          "caption": "SoulCare Dynamics homepage"
+        }
+      ],
+      "highlights": [
+        "Live on its own domain for a real client",
+        "Pricing and booking are easy to find",
+        "Mobile-first layout"
+      ]
+    },
+    {
+      "id": "soulcare-mobile",
+      "title": "SoulCare Mobile",
+      "year": "2026",
+      "tagline": "Prayer-request and care app for corporate chaplaincy",
+      "description": "A React Native app for SoulCare clients and their employees. Users send anonymous or signed prayer requests, contact a chaplain, and book time through Calendly. Supabase handles auth and data, with Edge Functions triggering push notifications and email.",
+      "techStack": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "NativeWind"
+      ],
+      "liveUrl": null,
+      "githubUrl": null,
+      "thumbnail": "/assets/projects/soulcare-mobile/thumb.webp",
+      "media": [
+        {
+          "src": "/assets/projects/soulcare-mobile/hero.webp",
+          "caption": "SoulCare Mobile home screen"
+        }
+      ],
+      "highlights": [
+        "Confidential intake protected with Supabase Row Level Security",
+        "Push notifications and email alerts from Supabase Edge Functions",
+        "Calendly scheduling inside a WebView"
+      ]
+    },
+    {
+      "id": "mayfly",
+      "title": "Mayfly",
+      "year": "2026",
+      "tagline": "Habit tracker where your habits grow as a garden",
+      "description": "My CSE senior capstone at Mississippi State. A cross-platform habit app built around expressive interaction instead of checklists. Data lives in SQLite on device, with a database abstraction layer so the same code also runs on web.",
+      "techStack": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "SQLite"
+      ],
+      "liveUrl": null,
+      "githubUrl": "https://github.com/MatthewLoyed/Mayfly",
+      "thumbnail": "/assets/projects/mayfly/thumb.webp",
+      "media": [
+        {
+          "src": "/assets/projects/mayfly/thumb.webp",
+          "caption": "Mayfly"
+        }
+      ],
+      "highlights": [
+        "Senior capstone project at Mississippi State University",
+        "Database abstraction layer: Expo SQLite on device, in-memory SQLite shim with localStorage backup on web",
+        "Focus on interaction design and motion"
+      ]
+    },
+    {
+      "id": "test-prep-pro",
+      "title": "Test Prep Pro",
+      "year": "2025",
+      "tagline": "ACT practice from your own test PDFs",
+      "description": "Upload an ACT practice test PDF and the app extracts the questions, times you, gives instant feedback by section, and tracks your progress over time. Math renders with MathJax.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "PDF.js"
+      ],
+      "liveUrl": "https://testpreppro.vercel.app",
+      "githubUrl": "https://github.com/MatthewLoyed/ACT_Prep",
+      "thumbnail": "/assets/projects/test-prep-pro/thumb.webp",
+      "media": [
+        {
+          "src": "/assets/projects/test-prep-pro/thumb.webp",
+          "caption": "Test Prep Pro dashboard"
+        }
+      ],
+      "highlights": [
+        "PDF import that extracts questions automatically",
+        "Section practice with a custom timer",
+        "Instant feedback and progress tracking"
+      ]
+    },
+    {
+      "id": "mcsr-dashboard",
+      "title": "MCSR Dashboard",
+      "year": "2026",
+      "tagline": "Turn tracker for a map-based strategy game",
+      "description": "A web dashboard for a community strategy game: players submit and review turns, and the page keeps track of pending and confirmed actions and player profiles.",
+      "techStack": [
+        "React",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "liveUrl": "https://mcsr-dashboard.vercel.app",
+      "githubUrl": "https://github.com/MatthewLoyed/mcsr-dashboard",
+      "thumbnail": "/assets/projects/mcsr-dashboard/thumb.webp",
+      "media": [
+        {
+          "src": "/assets/projects/mcsr-dashboard/thumb.webp",
+          "caption": "MCSR Dashboard"
+        }
+      ],
+      "highlights": [
+        "Turn submission with pending and confirmed states",
+        "Player profile views"
       ]
     }
   ]
