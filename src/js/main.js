@@ -86,6 +86,10 @@ function initContactForm() {
   });
 }
 
+// Start at the top on load/reload unless the URL points at a section.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) window.scrollTo(0, 0);
+
 document.getElementById('year').textContent = new Date().getFullYear();
 renderProjects();
 initStars();
