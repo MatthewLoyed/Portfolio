@@ -9,93 +9,99 @@
   <meta property="og:description" content="Software engineer in Huntsville, AL. Selected projects and experience.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/assets/profile/prof_headshot.webp">
-  <meta name="theme-color" content="#faf8f4">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232f5d50'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='600' text-anchor='middle' fill='%23faf8f4'%3EML%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0d0f12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238c9bff'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='600' text-anchor='middle' fill='%230d0f12'%3EML%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-  <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
-    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between" aria-label="Main">
-      <a href="#top" class="font-serif text-lg font-semibold whitespace-nowrap">Matthew Loyed</a>
-      <ul class="flex gap-4 sm:gap-6 text-sm text-muted">
-        <li><a href="#work" class="hover:text-ink transition-colors">Work</a></li>
-        <li><a href="#experience" class="hover:text-ink transition-colors">Experience</a></li>
-        <li><a href="#contact" class="hover:text-ink transition-colors">Contact</a></li>
+  <header class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main">
+      <a href="#top" class="text-lg font-extrabold text-white whitespace-nowrap">Matthew <span class="text-brand">Loyed</span></a>
+      <ul class="flex gap-4 sm:gap-8 text-sm font-medium text-muted">
+        <li><a href="#work" class="hover:text-white transition-colors">Work</a></li>
+        <li><a href="#experience" class="hover:text-white transition-colors">Experience</a></li>
+        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main id="top" class="max-w-3xl mx-auto px-6">
+  <main id="top">
     <!-- Intro -->
-    <section class="pt-16 pb-20 md:pt-24 md:pb-24">
-      <img src="/assets/profile/prof_headshot.webp" alt="Matthew Loyed" width="96" height="96"
-           class="w-24 h-24 rounded-full object-cover mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium leading-tight mb-6">
-        I'm Matthew, a software engineer in Huntsville, Alabama.
-      </h1>
-      <div class="space-y-4 text-lg text-muted max-w-2xl">
-        <p>
-          I've written performance-sensitive C++ for object tracking and test systems, and I'll join the
-          U.S. Army Aviation and Missile Test Directorate full-time in summer 2027.
-          On my own time I build web and mobile apps, usually for a real person who needs them.
-        </p>
-        <p>
-          A few things I've shipped: a Chrome extension on the Web Store, a website for a chaplaincy practice,
-          and a local-AI desktop assistant I'm still tinkering with.
+    <section class="sky relative overflow-hidden">
+      <div id="stars" class="absolute inset-0" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-5xl mx-auto px-6 pt-16 pb-56 md:pt-24 md:pb-64">
+        <img src="/assets/profile/prof_headshot.webp" alt="Matthew Loyed" width="96" height="96"
+             class="w-24 h-24 rounded-full object-cover mb-8 ring-4 ring-pink/80 ring-offset-4 ring-offset-[#111b27]">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 max-w-3xl">
+          Hi, I'm <span class="bg-gradient-to-r from-brand to-pink bg-clip-text text-transparent">Matthew</span>. I'm a software engineer in Huntsville, Alabama.
+        </h1>
+        <div class="space-y-4 text-lg text-text/90 max-w-2xl">
+          <p>
+            I've written performance-sensitive C++ for object tracking and test systems, and I'll join the
+            U.S. Army Aviation and Missile Test Directorate full-time in summer 2027.
+            On my own time I build web and mobile apps, usually for a real person who needs them.
+          </p>
+          <p>
+            A few things I've shipped: a Chrome extension on the Web Store, a website for a chaplaincy practice,
+            and a local-AI desktop assistant I'm still tinkering with.
+          </p>
+        </div>
+        <p class="mt-10 flex flex-wrap gap-3">
+          <a class="pill" href="#work">See my work</a>
+          <a class="pill" href="https://github.com/MatthewLoyed" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="pill" href="https://www.linkedin.com/in/matthew-loyed-4315b1346/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="pill" href="mailto:matthewloyed@gmail.com">Email</a>
         </p>
       </div>
-      <p class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-        <a class="link" href="#work">See my work</a>
-        <a class="link" href="https://github.com/MatthewLoyed" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="link" href="https://www.linkedin.com/in/matthew-loyed-4315b1346/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="link" href="mailto:matthewloyed@gmail.com">Email</a>
-      </p>
+      <!-- Hills -->
+      <svg class="absolute bottom-0 left-0 w-full h-48 md:h-64" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#16222f" d="M0 200C150 120 300 120 450 170S750 230 900 150 1200 90 1440 160V320H0Z"/>
+        <path fill="#111a26" d="M0 240C200 180 380 200 560 230S900 260 1080 200 1330 180 1440 220V320H0Z"/>
+        <path fill="#0d0f12" d="M0 292C240 252 460 272 700 287S1100 302 1440 272V320H0Z"/>
+      </svg>
     </section>
 
+    <div class="max-w-5xl mx-auto px-6">
     <!-- Work -->
-    <section id="work" class="pb-20">
+    <section id="work" class="pb-24 pt-8">
       <h2 class="section-label">Selected work</h2>
-      <div id="featured" class="grid gap-10 mb-14"></div>
-      <h3 class="section-label !mb-2">More</h3>
-      <ul id="projectList" class="divide-y divide-line border-y border-line"></ul>
+      <div id="featured" class="grid gap-8 md:grid-cols-2 mb-8"></div>
+      <div id="projectList" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="pb-20">
+    <section id="experience" class="pb-24">
       <h2 class="section-label">Experience</h2>
-      <ol class="space-y-10">
-        <li class="grid md:grid-cols-[9rem_1fr] gap-x-8 gap-y-1">
-          <p class="text-sm text-muted pt-1">Summer 2026<br>Returning summer 2027</p>
-          <div>
-            <h3 class="text-xl font-medium">Software Engineering Intern</h3>
-            <p class="text-muted mb-3">U.S. Army Aviation and Missile Test Directorate</p>
-            <p>Interned on aviation and missile test systems in summer 2026. I'm returning as a full-time software engineer in summer 2027.</p>
-          </div>
+      <ol class="relative border-l border-line ml-2 space-y-12">
+        <li class="pl-8 relative">
+          <span class="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-pink ring-4 ring-bg"></span>
+          <p class="text-sm font-semibold text-brand mb-1">Summer 2026 · returning summer 2027</p>
+          <h3 class="text-xl">Software Engineering Intern</h3>
+          <p class="text-muted mb-3">U.S. Army Aviation and Missile Test Directorate</p>
+          <p class="max-w-2xl">Interned on aviation and missile test systems in summer 2026. I'm returning as a full-time software engineer in summer 2027.</p>
         </li>
-        <li class="grid md:grid-cols-[9rem_1fr] gap-x-8 gap-y-1">
-          <p class="text-sm text-muted pt-1">May 2024 – Aug 2025</p>
-          <div>
-            <h3 class="text-xl font-medium">Software Engineering Intern</h3>
-            <p class="text-muted mb-3">Radiance Technologies</p>
-            <ul class="list-disc pl-5 space-y-2 marker:text-line">
-              <li>Debugged and extended performance-critical C++ systems, with attention to numerical correctness and system integration.</li>
-              <li>Built object tracking that analyzes video frame by frame, and tuned it for runtime.</li>
-            </ul>
-          </div>
+        <li class="pl-8 relative">
+          <span class="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-brand ring-4 ring-bg"></span>
+          <p class="text-sm font-semibold text-brand mb-1">May 2024 – Aug 2025</p>
+          <h3 class="text-xl">Software Engineering Intern</h3>
+          <p class="text-muted mb-3">Radiance Technologies</p>
+          <ul class="list-disc pl-5 space-y-2 marker:text-brand max-w-2xl">
+            <li>Debugged and extended performance-critical C++ systems, with attention to numerical correctness and system integration.</li>
+            <li>Built object tracking that analyzes video frame by frame, and tuned it for runtime.</li>
+          </ul>
         </li>
-        <li class="grid md:grid-cols-[9rem_1fr] gap-x-8 gap-y-1">
-          <p class="text-sm text-muted pt-1">Aug 2022 – May 2023</p>
-          <div>
-            <h3 class="text-xl font-medium">Software Engineering Intern</h3>
-            <p class="text-muted mb-3">Craft Designs</p>
-            <ul class="list-disc pl-5 space-y-2 marker:text-line">
-              <li>Ran structured test procedures and designed flight paths for live software demos.</li>
-              <li>Worked on validation workflows to catch problems before deployment.</li>
-            </ul>
-          </div>
+        <li class="pl-8 relative">
+          <span class="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-brand ring-4 ring-bg"></span>
+          <p class="text-sm font-semibold text-brand mb-1">Aug 2022 – May 2023</p>
+          <h3 class="text-xl">Software Engineering Intern</h3>
+          <p class="text-muted mb-3">Craft Designs</p>
+          <ul class="list-disc pl-5 space-y-2 marker:text-brand max-w-2xl">
+            <li>Ran structured test procedures and designed flight paths for live software demos.</li>
+            <li>Worked on validation workflows to catch problems before deployment.</li>
+          </ul>
         </li>
       </ol>
-      <p class="mt-10 text-sm text-muted">
+      <p class="mt-12 text-sm text-muted">
         Languages and tools I use most: C++, Python, JavaScript and TypeScript, React, React Native, Node.js, SQL, Git.
       </p>
     </section>
@@ -103,41 +109,46 @@
     <!-- Contact -->
     <section id="contact" class="pb-24">
       <h2 class="section-label">Contact</h2>
-      <p class="text-lg text-muted max-w-xl mb-8">
-        Best way to reach me is email at
-        <a class="link text-ink" href="mailto:matthewloyed@gmail.com">matthewloyed@gmail.com</a>,
-        or use the form.
-      </p>
-
-      <form id="contactForm" class="max-w-xl space-y-4">
-        <input type="hidden" name="access_key" value="96b7d7bb-2ab4-4f89-bad7-c6924c42aaf9">
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+      <div class="rounded-2xl border-2 border-dashed border-brand/50 bg-surface p-6 md:p-10 grid md:grid-cols-2 gap-10">
         <div>
-          <label for="name" class="block text-sm font-medium mb-1">Name</label>
-          <input id="name" name="name" type="text" required autocomplete="name"
-                 class="w-full px-3 py-2 bg-white border border-line rounded focus:border-accent">
+          <h3 class="text-3xl mb-4">Say hello</h3>
+          <p class="text-text/90 mb-6">
+            The best way to reach me is email at
+            <a class="link" href="mailto:matthewloyed@gmail.com">matthewloyed@gmail.com</a>,
+            or use the form.
+          </p>
         </div>
-        <div>
-          <label for="email" class="block text-sm font-medium mb-1">Email</label>
-          <input id="email" name="email" type="email" required autocomplete="email"
-                 class="w-full px-3 py-2 bg-white border border-line rounded focus:border-accent">
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-medium mb-1">Message</label>
-          <textarea id="message" name="message" rows="5" required
-                    class="w-full px-3 py-2 bg-white border border-line rounded focus:border-accent"></textarea>
-        </div>
-        <button id="submitBtn" type="submit"
-                class="px-5 py-2 bg-accent text-paper rounded font-medium hover:bg-ink transition-colors disabled:opacity-60">
-          Send
-        </button>
-        <p id="formStatus" role="status" class="text-sm min-h-[1.25rem]"></p>
-      </form>
+        <form id="contactForm" class="space-y-4">
+          <input type="hidden" name="access_key" value="96b7d7bb-2ab4-4f89-bad7-c6924c42aaf9">
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-1">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name"
+                   class="w-full px-3 py-2 bg-bg border border-line rounded-lg focus:border-brand">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email"
+                   class="w-full px-3 py-2 bg-bg border border-line rounded-lg focus:border-brand">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required
+                      class="w-full px-3 py-2 bg-bg border border-line rounded-lg focus:border-brand"></textarea>
+          </div>
+          <button id="submitBtn" type="submit"
+                  class="px-6 py-2.5 bg-pink text-bg rounded-lg font-bold hover:bg-white transition-colors disabled:opacity-60">
+            Send
+          </button>
+          <p id="formStatus" role="status" class="text-sm min-h-[1.25rem]"></p>
+        </form>
+      </div>
     </section>
+    </div>
   </main>
 
   <footer class="border-t border-line">
-    <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-muted">
+    <div class="max-w-5xl mx-auto px-6 py-8 text-sm text-muted">
       © <span id="year">2026</span> Matthew Loyed
     </div>
   </footer>

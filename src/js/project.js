@@ -24,23 +24,23 @@ function render(p) {
   ].filter(Boolean).join('');
 
   root.innerHTML = `
-    <p class="text-sm text-muted mb-2">${esc(p.year)}</p>
-    <h1 class="text-4xl md:text-5xl font-medium mb-3">${esc(p.title)}</h1>
+    <p class="text-sm font-semibold text-brand mb-2">${esc(p.year)}</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-3">${esc(p.title)}</h1>
     <p class="text-xl text-muted mb-6">${esc(p.tagline)}</p>
     <p class="flex flex-wrap gap-1.5 mb-6">${p.techStack.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</p>
     ${actions ? `<p class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-10">${actions}</p>` : ''}
 
     ${(p.media || []).map((m) => `
       <figure class="mb-10">
-        <img src="${esc(m.src)}" alt="${esc(m.caption || p.title)}" class="w-full max-h-[32rem] object-contain bg-white border border-line rounded">
+        <img src="${esc(m.src)}" alt="${esc(m.caption || p.title)}" class="w-full max-h-[32rem] object-contain bg-surface border border-line rounded-2xl">
         ${m.caption ? `<figcaption class="text-sm text-muted mt-2">${esc(m.caption)}</figcaption>` : ''}
       </figure>`).join('')}
 
-    <p class="text-lg mb-8 max-w-2xl">${esc(p.description)}</p>
+    <p class="text-lg text-text/90 mb-8 max-w-2xl">${esc(p.description)}</p>
 
     ${p.highlights?.length ? `
       <h2 class="section-label !mb-3">Notes</h2>
-      <ul class="list-disc pl-5 space-y-2 marker:text-line max-w-2xl">
+      <ul class="list-disc pl-5 space-y-2 marker:text-brand max-w-2xl">
         ${p.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}
       </ul>` : ''}
   `;

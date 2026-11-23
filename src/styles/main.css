@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,31 +7,58 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 4.5rem;
+    color-scheme: dark;
   }
   body {
-    @apply bg-paper text-ink font-sans antialiased;
+    @apply bg-bg text-text font-sans antialiased;
   }
   h1, h2, h3 {
-    @apply font-serif;
+    @apply font-bold tracking-tight text-white;
+  }
+  ::selection {
+    background: #ff5fa2;
+    color: #0d0f12;
   }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-accent;
+    @apply outline outline-2 outline-offset-2 outline-brand;
   }
 }
 
 @layer components {
   .link {
-    @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-accent hover:text-accent;
+    @apply font-medium text-white underline decoration-brand/60 decoration-2 underline-offset-4 transition-colors hover:decoration-pink hover:text-pink;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-dashed border-brand/60 px-4 py-1.5 text-sm font-medium text-white transition hover:border-pink hover:text-pink hover:-translate-y-0.5;
   }
   .tag {
-    @apply text-xs text-muted border border-line rounded px-2 py-0.5;
+    @apply text-xs font-medium text-muted border border-line rounded-md px-2 py-0.5;
   }
   .section-label {
-    @apply text-sm uppercase tracking-widest text-muted mb-8;
+    @apply text-sm font-bold uppercase tracking-widest text-pink mb-8;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-brand/70;
   }
 }
 
+/* Night sky */
+.sky {
+  background: linear-gradient(180deg, #0b1118 0%, #111b27 50%, #1c3046 100%);
+}
+.star {
+  position: absolute;
+  border-radius: 9999px;
+  background: #e6ebf0;
+  animation: twinkle 4s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .star { animation: none; opacity: 0.5; }
+  .card, .pill { transition: none; }
 }

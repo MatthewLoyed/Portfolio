@@ -13,39 +13,47 @@ function links(p) {
   return out.join('');
 }
 
-function featuredCard(p) {
+function cardImage(p, tall) {
+  const contain = p.thumbFit === 'contain';
   return `
-    <article class="grid md:grid-cols-[1fr_1.1fr] gap-6 items-center">
-      <a href="/project.html?id=${esc(p.id)}" class="block border border-line rounded overflow-hidden bg-white" tabindex="-1" aria-hidden="true">
-        <img src="${esc(p.thumbnail)}" alt="" loading="lazy" class="w-full h-auto">
-      </a>
-      <div>
-        <p class="text-sm text-muted mb-1">${esc(p.year)}</p>
-        <h3 class="text-2xl font-medium mb-2"><a href="/project.html?id=${esc(p.id)}" class="hover:text-accent transition-colors">${esc(p.title)}</a></h3>
-        <p class="text-muted mb-3">${esc(p.description)}</p>
-        <p class="flex flex-wrap gap-1.5 mb-4">${p.techStack.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</p>
-        <p class="flex flex-wrap gap-x-5 gap-y-1 text-sm">${links(p)}</p>
+    <a href="/project.html?id=${esc(p.id)}" class="relative block overflow-hidden ${contain ? 'bg-[#0b1118]' : 'bg-bg'} ${tall ? 'aspect-[16/10]' : 'aspect-[16/9]'}" tabindex="-1" aria-hidden="true">
+      <img src="${esc(p.thumbnail)}" alt="" loading="lazy"
+           class="absolute inset-0 w-full h-full ${contain ? 'object-contain py-3' : p.thumbFit === 'center' ? 'object-cover object-center' : 'object-cover object-top'}">
+    </a>`;
+}
+
+function card(p, featured) {
+  return `
+    <article class="card flex flex-col">
+      ${cardImage(p, featured)}
+      <div class="p-6 flex flex-col flex-1">
+        <p class="text-sm font-semibold text-brand mb-1">${esc(p.year)}</p>
+        <h3 class="${featured ? 'text-2xl' : 'text-xl'} mb-2"><a href="/project.html?id=${esc(p.id)}" class="hover:text-pink transition-colors">${esc(p.title)}</a></h3>
+        <p class="text-text/80 mb-4 ${featured ? '' : 'text-sm'}">${esc(featured ? p.description : p.tagline)}</p>
+        <p class="flex flex-wrap gap-1.5 mb-5">${p.techStack.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</p>
+        <p class="flex flex-wrap gap-x-5 gap-y-1 text-sm mt-auto">${links(p)}</p>
       </div>
     </article>`;
 }
 
-function listRow(p) {
-  return `
-    <li class="py-5 grid md:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
-      <div>
-        <h3 class="text-lg font-medium"><a href="/project.html?id=${esc(p.id)}" class="hover:text-accent transition-colors">${esc(p.title)}</a>
-          <span class="text-sm text-muted font-sans font-normal ml-2">${esc(p.year)}</span></h3>
-        <p class="text-muted">${esc(p.tagline)}</p>
-        <p class="text-xs text-muted mt-1">${p.techStack.map(esc).join(' · ')}</p>
-      </div>
-      <p class="flex gap-x-5 text-sm md:self-center">${links(p)}</p>
-    </li>`;
-}
-
 async function renderProjects() {
   const projects = await getAllProjects();
-  document.getElementById('featured').innerHTML = projects.filter((p) => p.featured).map(featuredCard).join('');
-  document.getElementById('projectList').innerHTML = projects.filter((p) => !p.featured).map(listRow).join('');
+  document.getElementById('featured').innerHTML = projects.filter((p) => p.featured).map((p) => card(p, true)).join('');
+  document.getElementById('projectList').innerHTML = projects.filter((p) => !p.featured).map((p) => card(p, false)).join('');
+}
+
+function initStars() {
+  const el = document.getElementById('stars');
+  if (!el) return;
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < 70; i++) {
+    const s = document.createElement('span');
+    const size = Math.random() < 0.15 ? 3 : 2;
+    s.className = 'star';
+    s.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 70}%;width:${size}px;height:${size}px;animation-delay:${(Math.random() * 4).toFixed(2)}s`;
+    frag.appendChild(s);
+  }
+  el.appendChild(frag);
 }
 
 function initContactForm() {
@@ -66,11 +74,11 @@ function initContactForm() {
       if (!data.success) throw new Error(data.message || 'Request failed');
       form.reset();
       status.textContent = 'Thanks, your message was sent.';
-      status.classList.add('text-accent');
+      status.classList.add('text-pink');
     } catch (err) {
       console.error('Contact form error:', err);
       status.textContent = 'That did not go through. Please email me directly instead.';
-      status.classList.add('text-red-700');
+      status.classList.add('text-red-400');
     } finally {
       btn.disabled = false;
       btn.textContent = 'Send';
@@ -80,4 +88,5 @@ function initContactForm() {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 renderProjects();
+initStars();
 initContactForm();

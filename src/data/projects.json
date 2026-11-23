@@ -80,7 +80,8 @@
         "Waitlist and course-partner forms wired to Google Sheets and Resend",
         "Three-tier membership pricing layout",
         "Mobile-first, built for quick sign-up"
-      ]
+      ],
+      "thumbFit": "center"
     },
     {
       "id": "soulcare-dynamics",
@@ -134,7 +135,8 @@
         "Confidential intake protected with Supabase Row Level Security",
         "Push notifications and email alerts from Supabase Edge Functions",
         "Calendly scheduling inside a WebView"
-      ]
+      ],
+      "thumbFit": "contain"
     },
     {
       "id": "mayfly",
@@ -161,7 +163,8 @@
         "Senior capstone project at Mississippi State University",
         "Database abstraction layer: Expo SQLite on device, in-memory SQLite shim with localStorage backup on web",
         "Focus on interaction design and motion"
-      ]
+      ],
+      "thumbFit": "contain"
     },
     {
       "id": "test-prep-pro",
